@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean
+		class="com.johnkuper.epam.beanpostprocessors.BenchmarkBeanPostProcessor" />
+	<!-- <bean class="com.johnkuper.epam.beanpostprocessors.InitializationCheckerBeanPostProcessor" 
+		/> -->
+	<!-- <bean class="com.johnkuper.epam.beanpostprocessors.TransactionBeanPostProcessor" 
+		/> -->
+
+	<bean id="shakespeareQuoter" class="com.johnkuper.epam.ShakespeareQuoter">
+		<property name="message" value="2 B || ! 2 B" />
+	</bean>
+
+	<bean id="terminatorQuoter" class="com.johnkuper.epam.TerminatorQuoter">
+		<property name="messages">
+			<list>
+				<value>I'll be back</value>
+				<value>Trust me</value>
+				<ref bean="hastaLaVistaBaby" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="talkingRobotImpl" class="com.johnkuper.epam.TalkingRobotImpl">
+		<property name="quoters">
+			<list>
+				<ref bean="shakespeareQuoter" />
+				<ref bean="terminatorQuoter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="hastaLaVistaBaby" class="java.lang.String">
+		<constructor-arg value="Hasta la vista baby" />
+	</bean>
+
+
+</beans>
