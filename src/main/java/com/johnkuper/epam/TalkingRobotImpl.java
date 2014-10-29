@@ -3,8 +3,9 @@ package com.johnkuper.epam;
 import java.util.List;
 
 import com.johnkuper.epam.annotation.Benchmark;
+import com.johnkuper.epam.annotation.Transaction;
 
-
+@Transaction
 public class TalkingRobotImpl implements TalkingRobot {
 
 	private List<Quoter> quoters;

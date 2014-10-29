@@ -5,10 +5,10 @@
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<bean
+		class="com.johnkuper.epam.beanpostprocessors.TransactionBeanPostProcessor" />
+	<bean
 		class="com.johnkuper.epam.beanpostprocessors.BenchmarkBeanPostProcessor" />
 	<!-- <bean class="com.johnkuper.epam.beanpostprocessors.InitializationCheckerBeanPostProcessor" 
-		/> -->
-	<!-- <bean class="com.johnkuper.epam.beanpostprocessors.TransactionBeanPostProcessor" 
 		/> -->
 
 	<bean id="shakespeareQuoter" class="com.johnkuper.epam.ShakespeareQuoter">
