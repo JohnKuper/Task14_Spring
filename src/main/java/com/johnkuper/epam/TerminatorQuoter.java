@@ -2,6 +2,9 @@ package com.johnkuper.epam;
 
 import java.util.List;
 
+import com.johnkuper.epam.annotation.MyDeprecated;
+
+@MyDeprecated(newClass = T1000.class)
 public class TerminatorQuoter implements Quoter {
 
 	private List<String> messages;
