@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.stereotype.Component;
 
 import com.johnkuper.epam.annotation.Benchmark;
 
+@Component
 public class BenchmarkBeanPostProcessor implements BeanPostProcessor {
 
 	@Autowired

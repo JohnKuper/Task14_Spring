@@ -1,4 +1,4 @@
-package com.johnkuper.epam;
+package com.johnkuper.epam.quoters;
 
 public class T1000 extends TerminatorQuoter {
 

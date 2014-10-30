@@ -4,9 +4,11 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
+import org.springframework.stereotype.Component;
 
 import com.johnkuper.epam.annotation.MyDeprecated;
 
+@Component
 public class DeprecatedReplacerBeanFactoryPostProcessor implements
 		BeanFactoryPostProcessor {
 

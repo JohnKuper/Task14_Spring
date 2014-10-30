@@ -7,28 +7,17 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-	<bean
-		class="com.johnkuper.epam.beanpostprocessors.TransactionBeanPostProcessor" />
-	<bean
-		class="com.johnkuper.epam.beanpostprocessors.BenchmarkBeanPostProcessor" />
-	<!-- <bean class="com.johnkuper.epam.beanpostprocessors.InitializationCheckerBeanPostProcessor" 
-		/> -->
-	<bean
-		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
-	<bean
-		class="com.johnkuper.epam.beanpostprocessors.WarningBeanFactoryPostProcessor" />
-	<bean
-		class="com.johnkuper.epam.beanpostprocessors.DeprecatedReplacerBeanFactoryPostProcessor" />
-
+	<context:component-scan base-package="com.johnkuper.epam.beanpostprocessors"></context:component-scan>
+	<context:component-scan base-package="com.johnkuper.epam.quoters"></context:component-scan>
 	<context:property-placeholder location="classpath:quotes.properties" />
 
 
-	<bean id="shakespeareQuoter" class="com.johnkuper.epam.ShakespeareQuoter"
+	<bean id="shakespeareQuoter" class="com.johnkuper.epam.quoters.ShakespeareQuoter"
 		destroy-method="sayQuote" scope="prototype">
 		<property name="message" value="${shakespeareQuote}" />
 	</bean>
 
-	<bean id="terminatorQuoter" class="com.johnkuper.epam.TerminatorQuoter">
+	<bean id="terminatorQuoter" class="com.johnkuper.epam.quoters.TerminatorQuoter">
 		<property name="messages">
 			<list>
 				<value>I'll be back</value>
@@ -38,15 +27,6 @@
 		</property>
 	</bean>
 
-
-	<bean id="talkingRobotImpl" class="com.johnkuper.epam.TalkingRobotImpl">
-		<property name="quoters">
-			<list>
-				<ref bean="shakespeareQuoter" />
-				<ref bean="terminatorQuoter" />
-			</list>
-		</property>
-	</bean>
 
 	<bean id="hastaLaVistaBaby" class="java.lang.String">
 		<constructor-arg value="Hasta la vista baby" />

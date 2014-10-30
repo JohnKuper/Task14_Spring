@@ -8,9 +8,11 @@ import java.util.Map;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 import com.johnkuper.epam.annotation.Transaction;
 
+@Component
 public class TransactionBeanPostProcessor implements BeanPostProcessor {
 
 	private Map<String, Class<?>> map = new HashMap<String, Class<?>>();
