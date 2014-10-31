@@ -1,14 +1,12 @@
-package com.johnkuper.epam.quoters;
+package com.johnkuper.epam.dependson;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class Launcher {
+public class DependsMain {
 
 	public static void main(String[] args) {
-
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
-				JavaConfig.class);
-		context.getBean(TalkingRobot.class).talk();
+				"com.johnkuper.epam.dependson");
 	}
 
 }

@@ -28,7 +28,6 @@ public class BenchmarkBeanPostProcessor implements BeanPostProcessor {
 		try {
 			originalClass = Class.forName(beanClassName);
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Method[] methods = originalClass.getMethods();
